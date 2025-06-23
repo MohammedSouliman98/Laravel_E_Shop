@@ -1,10 +1,11 @@
 <?php
 
+use App\Http\Controllers\mainPageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('users.layout.home');
 });
 
 Route::get('/dashboard', function () {
@@ -12,6 +13,11 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/home' , [mainPageController::class , 'index'])->name('home');
+    Route::get('/shop' , [mainPageController::class , 'shop'])->name('shop');
+    Route::get('/detail' , [mainPageController::class , 'detail'])->name('detail');
+    Route::get('/shopping-cart' , [mainPageController::class , 'cart'])->name('shopping-cart');
+    Route::get('/contact' , [mainPageController::class , 'contact'])->name('contact');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

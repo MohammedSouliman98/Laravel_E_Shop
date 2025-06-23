@@ -34,7 +34,7 @@
        <span>0</span>
        </div>
       </div>
-      <div class="">
+      {{-- <div class="">
             @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                 <li>
                     <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
@@ -42,7 +42,7 @@
                     </a>
                 </li>
             @endforeach
-      </div>
+      </div> --}}
    </div>
 </div>
 <div class="">
