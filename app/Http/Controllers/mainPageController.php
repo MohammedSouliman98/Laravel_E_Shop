@@ -18,4 +18,7 @@ class mainPageController extends Controller
     public function cart(){
         return view('users.layout.shopping-cart');
     }
+    public function contact(){
+        return view('users.layout.contact');
+    }
 }
