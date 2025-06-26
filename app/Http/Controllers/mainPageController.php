@@ -2,23 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\product;
 use Illuminate\Http\Request;
 
 class mainPageController extends Controller
 {
+
     public function index(){
-        return view('users.layout.home');
+        $product = product::all();
+
+        return view('users.layout.home' ,['products' => $product]);
     }
     public function shop(){
-        return view('users.layout.shop');
+     $product = product::all();
+
+        return view('users.layout.shop',['products' => $product]);
     }
     public function detail(){
-        return view('users.layout.shop-details');
+     $product = product::all();
+
+        return view('users.layout.shop-details',['products' => $product]);
     }
     public function cart(){
-        return view('users.layout.shopping-cart');
+     $product = product::all();
+
+        return view('users.layout.shopping-cart' ,['products' => $product]);
     }
     public function contact(){
-        return view('users.layout.contact');
+        $product = product::all();
+
+        return view('users.layout.contact' ,['products' => $product ]);
     }
 }

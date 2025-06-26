@@ -1,15 +1,17 @@
 
+@foreach ($products as $product)
 
    <div class="product-img border border-black/10">
       <div class="border-b border-black/10 overflow-hidden">
-         <img src="img/product-1.jpg" class="mx-auto" alt="">
+         <img src={{ asset($product->images) }} class="mx-auto" alt="">
       </div>
       <div class="body font-bold my-10">
-         <div class="title text-center">Colorful Stylish Shirt</div>
+         <div class="title text-center">{{$product->name}}</div>
          <div class="price flex justify-center">
-            <div class="new-price px-5">125$</div>
-            <div class="old-price px-5">125$</div>
+            <div class="new-price px-5">{{$product->price}}$</div>
+            <div class="old-price px-5">{{$product->price}}$</div>
          </div>
+         {{$product->images}}
       </div>
       <div class="flex  buttons border-t border-black/10 text-center">
          <button class="w-1/2  p-2 flex justify-around items-center hover:text-amber-800 capitalize"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-amber-800">
@@ -23,3 +25,4 @@
             Add To Cart</button>
       </div>
    </div>
+   @endforeach

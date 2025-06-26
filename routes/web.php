@@ -10,9 +10,7 @@ Route::group([
     'prefix' => LaravelLocalization::setLocale(),
 	'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
 ],function(){
-    Route::get('/', function () {
-        return view('users.layout.home');
-    });
+    Route::get('/', [mainPageController::class , 'index']);
     
     Route::get('/dashboard', function () {
         return view('dashboard');
@@ -29,6 +27,6 @@ Route::group([
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     });
     
+    require __DIR__.'/auth.php';
 });
-require __DIR__.'/auth.php';
 
