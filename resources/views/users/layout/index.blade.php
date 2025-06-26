@@ -34,7 +34,7 @@
        <span>0</span>
        </div>
       </div>
-      {{-- <div class="">
+      <ul class="">
             @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                 <li>
                     <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
@@ -42,7 +42,7 @@
                     </a>
                 </li>
             @endforeach
-      </div> --}}
+      </ul>
    </div>
 </div>
 <div class="">
@@ -80,10 +80,23 @@
             <a href={{route('contact')}} class="hover:text-amber-800/50 ">contact</a>
          </ul>
          <div class="auth w-1/2 flex justify-end items-center pr-10">
-               
-               <a href={{route('login')}} class="login hover:text-amber-800/50 px-3">Login</a>
-               <a href={{route('register')}} class="register hover:text-amber-800/50 pl-3">Register</a>
-                        
+            @if (Auth::user())
+               <ul class="">
+                  <li>
+                     {{Auth::user() -> name}}
+                  </li>
+                  <li>
+                     <form action="{{route('logout')}}" method="POST">
+                     @csrf   
+                     <button class="logout hover:text-amber-800/50 px-3" >Logout</button>
+                     </form>      
+                  </li>    
+               </ul>           
+            @else
+            <a href={{route('login')}} class="login hover:text-amber-800/50 px-3">Login</a>
+            <a href={{route('register')}} class="register hover:text-amber-800/50 pl-3">Register</a>
+                     
+            @endif
 
          </div>
       </div>
