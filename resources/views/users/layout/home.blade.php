@@ -65,14 +65,14 @@
          <div class="h-100 border border-black/20 product-img">
             <div class="number-of-porduct h-15 text-end mx-5 text-black/50 py-3">15 porduct</div>
             <div class="h-70 overflow-hidden">
-               <img src={{ asset('"img/cat-2.jpg"') }} class="h-full mx-auto" alt="">
+               <img src={{asset("img/cat-2.jpg")}} class="h-full mx-auto" alt="">
             </div>
             <div class="name h-15 font-bold text-2xl mx-5">Men's dresses</div>
          </div>
          <div class="h-100 border border-black/20 product-img">
             <div class="number-of-porduct h-15 text-end mx-5 text-black/50 py-3">15 porduct</div>
             <div class="h-70 overflow-hidden">
-               <img src="img/cat-1.jpg" class="h-full mx-auto" alt="">
+               <img src={{asset("img/cat-3.jpg")}} class="h-full mx-auto" alt="">
             </div>
             <div class="name h-15 font-bold text-2xl mx-5">Men's dresses</div>
          </div>

@@ -12,13 +12,13 @@
 
 <div class="px-15 my-10 ">
    <div class="flex mb-10 h-125">
-      <div class="border-b border-black/10 overflow-hidden w-2/5" style="background-image: url(img/product-1.jpg); background-size:contain">
+      <div class="border-b border-black/10 overflow-hidden w-2/5" style="background-image: url({{ asset($product->images) }}); background-size:contain">
       </div>
       <div class="flex flex-col justify-around w-3/5  px-15 ">
-         <h2 class="capitalize font-bold text-3xl">colorful stylish shirt</h2>
+         <h2 class="capitalize font-bold text-3xl">{{$product->name}}</h2>
          <div class="rate">5 star</div>
-         <div class="price font-bold">150.00$</div>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima cupiditate suscipit, doloribus reiciendis magnam labore blanditiis voluptate    unde odit consectetur incidunt odio, inventore sint repellat, autem consequuntur. Debitis, distinctio qui. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ab architecto ex minus odit numquam quod ipsum maiores, excepturi dignissimos dicta optio? Soluta fugiat vero obcaecati est blanditiis rem debitis?</p>     
+         <div class="price font-bold">{{$product->price}}$</div>
+         <p>{{$product->description}}</p>     
          <form action="" class="h-40 flex flex-col">
             <div class="size flex font-bold my-3">
                <div class="capitalize">size : </div>

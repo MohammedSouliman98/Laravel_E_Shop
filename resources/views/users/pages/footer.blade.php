@@ -66,4 +66,4 @@
       </div>
    </div>
 </div>
-<script src="shop.js"></script>
+<script src="{{asset('shop.js')}}"></script>

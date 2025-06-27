@@ -20,13 +20,15 @@ shopping cart
                <th class="px-6 py-3">price</th>
                <th class="px-6 py-3">quantity</th>
                <th class="px-6 py-3">total</th>
+               <th class="px-6 py-3">size</th>
                <th class="px-6 py-3">remove</th>
             </tr>
          </thead>
          <tbody>
+            @foreach ($products as $product)
             <tr>
-               <td class="px-6 py-3 text-center border border-black/20">colorful</td>
-               <td class="px-6 py-3 text-center border border-black/20">150$</td>
+               <td class="px-6 py-3 text-center border border-black/20">{{$product->name}}</td>
+               <td class="px-6 py-3 text-center border border-black/20">{{$product->price}}$</td>
                <td class="px-6 py-3 text-center border border-black/20 ">
                   <div class="flex justify-center">
                      <button class="text-2xl bg-amber-200 size-7 text-center content-center " id="minus">
@@ -43,6 +45,7 @@ shopping cart
                   </div>
                </td>
                <td class="px-6 py-3 text-center border border-black/20">150$</td>
+               <td class="px-6 py-3 text-center border border-black/20">Xl , md</td>
                <td class="px-6 py-3 text-center border border-black/20">
                   <button class="text-2xl bg-red-400 size-7 text-center content-center" id="remove">
                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
@@ -51,6 +54,8 @@ shopping cart
                   </button>
                </td>
             </tr>
+            @endforeach
+            
          </tbody>
       </table>
    </div>

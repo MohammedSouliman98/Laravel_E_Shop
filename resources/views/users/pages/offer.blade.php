@@ -14,7 +14,7 @@
                <p class="text-4xl font-bold my-8">Winter Collection</p>
                <button class="w-35 h-10 text-amber-500 border border-amber-500/50 hover:text-black hover:bg-amber-500 transition">show now</button>
             </div>
-            <img src={{asset("img/offer-1.png")}} class="w-45" alt="">
+            <img src={{asset("img/offer-2.png")}} class="w-45" alt="">
          </div>
    </div>
 </div>

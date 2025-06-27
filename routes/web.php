@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\mainPageController;
@@ -19,8 +20,9 @@ Route::group([
     Route::middleware('auth')->group(function () {
         Route::get('/home' , [mainPageController::class , 'index'])->name('home');
         Route::get('/shop' , [mainPageController::class , 'shop'])->name('shop');
-        Route::get('/detail' , [mainPageController::class , 'detail'])->name('detail');
+        Route::get('/detail/{id}' , [mainPageController::class , 'detail'])->name('detail');
         Route::get('/shopping-cart' , [mainPageController::class , 'cart'])->name('shopping-cart');
+        Route::get('/add_to_cart/{id}', [CartController::class , 'add'])->name('add_to_cart');
         Route::get('/contact' , [mainPageController::class , 'contact'])->name('contact');
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

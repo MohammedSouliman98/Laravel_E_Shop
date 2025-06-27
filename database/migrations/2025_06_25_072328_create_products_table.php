@@ -20,7 +20,8 @@ return new class extends Migration
             $table->string('category'); // e.g., "Men", "Women", "Kids"
             $table->string('size_options')->nullable(); // e.g., "S,M,L,XL"
             $table->integer('stock')->default(0);
-            $table->boolean('trind')->default(false);
+            $table->integer('rate')->default(0);
+            $table->boolean('is_trind')->default(false);
             $table->timestamps();
             $table->softDeletes(); // For soft deletion
         });

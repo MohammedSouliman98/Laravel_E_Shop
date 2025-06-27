@@ -75,7 +75,7 @@
          <ul class="flex justify-between items-center w-1/2 h-15 font-bold ">
             <a href={{ route('home')}} class="hover:text-amber-800/50 ">{{trans('index.home')}}</a>
             <a href={{ route('shop')}} class="hover:text-amber-800/50 ">{{ trans('index.shop') }}</a>
-            <a href={{route('detail')}} class="hover:text-amber-800/50 ">shop detail</a>
+            <a href={{route('detail',1)}} class="hover:text-amber-800/50 ">shop detail</a>
             <a href={{route('shopping-cart')}} class="hover:text-amber-800/50 ">shopping cart</a>
             <a href={{route('contact')}} class="hover:text-amber-800/50 ">contact</a>
          </ul>
