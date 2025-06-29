@@ -17,12 +17,13 @@ Route::group([
         return view('dashboard');
     })->middleware(['auth', 'verified'])->name('dashboard');
     
-    Route::middleware('auth')->group(function () {
+    Route::middleware('guest')->group(function () {
         Route::get('/home' , [mainPageController::class , 'index'])->name('home');
         Route::get('/shop' , [mainPageController::class , 'shop'])->name('shop');
         Route::get('/detail/{id}' , [mainPageController::class , 'detail'])->name('detail');
         Route::get('/shopping-cart' , [mainPageController::class , 'cart'])->name('shopping-cart');
         Route::get('/add_to_cart/{id}', [CartController::class , 'add'])->name('add_to_cart');
+        Route::get('/delete_from_cart/{id}', [CartController::class , 'delete'])->name('delete_from_cart');
         Route::get('/contact' , [mainPageController::class , 'contact'])->name('contact');
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

@@ -128,8 +128,8 @@ OUR SHOP
       <div class="products my-10">
          <div class="grid grid-cols-4 gap-4">
             @include('users.pages.products')
-            
          </div>
+<div class="my-3">{{$products->links()}}</div>
       </div>
    </div>
 </div>

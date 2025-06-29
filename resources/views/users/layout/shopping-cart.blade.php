@@ -27,7 +27,7 @@ shopping cart
          <tbody>
             @foreach ($products as $product)
             <tr>
-               <td class="px-6 py-3 text-center border border-black/20">{{$product->name}}</td>
+               <td class="px-6 py-3 text-center border border-black/20"><a href={{route('detail',[$product->id])}}>{{$product->name}}</a></td>
                <td class="px-6 py-3 text-center border border-black/20">{{$product->price}}$</td>
                <td class="px-6 py-3 text-center border border-black/20 ">
                   <div class="flex justify-center">
@@ -36,7 +36,7 @@ shopping cart
                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
                          </svg>                      
                      </button>
-                     <div class="number w-10 bg-gray-200 h-7  font-bold text-center content-center" id="number">1</div>
+                     <div class="number w-10 bg-gray-200 h-7  font-bold text-center content-center" id="number">{{$product->quantity}}</div>
                      <button class="text-2xl bg-amber-200 size-7 text-center content-center" id="plus">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -47,11 +47,15 @@ shopping cart
                <td class="px-6 py-3 text-center border border-black/20">150$</td>
                <td class="px-6 py-3 text-center border border-black/20">Xl , md</td>
                <td class="px-6 py-3 text-center border border-black/20">
-                  <button class="text-2xl bg-red-400 size-7 text-center content-center" id="remove">
-                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                      </svg>                   
-                  </button>
+                  <form action={{route('delete_from_cart', [$product->id])}} method='get'>
+                     @csrf
+                     @method('delete')
+                     <button type="submit" class="text-2xl bg-red-400 size-7 text-center content-center" id="remove">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                         </svg>                   
+                     </button>
+                  </form>
                </td>
             </tr>
             @endforeach

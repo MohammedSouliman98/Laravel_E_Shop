@@ -93,6 +93,7 @@
       <div class="w-full grid grid-cols-4 gap-4">
          @include('users.pages.products')
       </div>
+      <div class="my-3">{{$products->links()}}</div>
    </div>
 </div>
 
@@ -119,6 +120,7 @@
       <div class="w-full grid grid-cols-4 gap-4">
          @include('users.pages.products')
       </div>
+      <div class="my-3">{{$products->links()}}</div>
    </div>
 </div>
 

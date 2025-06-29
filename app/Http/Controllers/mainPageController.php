@@ -10,11 +10,11 @@ class mainPageController extends Controller
 {
 
     public function index(){
-        $product = product::select('name' , 'price','images','id')->get();
+        $product = product::select('name' , 'price','images','id')->simplePaginate(5);
         return view('users.layout.home' ,['products' => $product]);
     }
     public function shop(){
-        $product = product::select('name' , 'price','images','id')->get();
+        $product = product::select('name' , 'price','images','id')->simplePaginate(5);
         return view('users.layout.shop',['products' => $product]);
     }
     public function detail(Request $request){
