@@ -7,37 +7,77 @@ use Illuminate\Http\Request;
 
 class dashboardProductController extends Controller
 {
-    public function showall(){
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
         $data["product"] = product::all();
         return view('admin.product' , ['products' => $data['product']]);
     }
-    public function show($id){
-        $product = product::find($id);
-        $data['show'] = 'show';
-        return view('admin.create_product',["porduct" => $product ,'show' => $data['show']]);
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        $data = product::find(2); 
+        $data['route'] = 'create';
+        return view('admin.create_product',['product' => $data]);
     }
-    public function edit($id){
-        $product = product::find($id);
-        $data['edit'] = 'edit';
-        return view('admin.edit_product', ['porduct' => $product,'edit' => $data['edit']]);
-    }
-    public function create(){
-        return view('admin.create_product');
-    }
-    public function store(Request $request){
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
         $valedated = $request->validate([
             'name'  => 'required',
             'description'  => 'required',
             'price'  => 'required',
-            'images'  => 'image',
             'category'  => 'required',
-            'size_option'  => 'required',
+            'size_options'  => 'required',
             'rate'  => 'required',
             'stock'  => 'required',
             'is_trend'  => 'required',
         ]);
         product::create($valedated);
-        return view('admin.product');
+        return redirect()->route('product.index');
     }
 
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        $data = product::find($id);
+        $data['route'] = 'show';
+        return view('admin.create_product',["product" => $data ]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        $data = product::find($id);
+        $data['route'] = 'edit';
+        return view('admin.edit_product', ['product' => $data]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        dd($request);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        //
+    }
 }

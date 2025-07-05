@@ -87,7 +87,7 @@
                   </li>
                   @if (Auth::user()->is_admin == 1)
                   <li>
-                     <a href="{{route('dashboard')}}">Dashboard</a>
+                     <a href="{{route('user.index')}}">Dashboard</a>
                   </li>  
                   @endif
                   <li>

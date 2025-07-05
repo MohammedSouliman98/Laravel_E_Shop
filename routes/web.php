@@ -6,6 +6,7 @@ use App\Http\Controllers\dashboardUserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\mainPageController;
+use App\Models\product;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
@@ -16,13 +17,8 @@ Route::group([
     Route::get('/', [mainPageController::class , 'index']);
     
     Route::middleware(['auth' , 'is_admin'])->group(function() {
-        
-    Route::get('/dashboard', [dashboardUserController::class , 'show'])->name('dashboard');
-    Route::get('/products', [dashboardProductController::class , 'showall'])->name('show_products');
-    Route::get('/products/{id}', [dashboardProductController::class , 'show'])->name('show_product');
-    Route::get('/product/edit/{id}', [dashboardProductController::class , 'edit'])->name('edit_product');
-    Route::get('/create', [dashboardProductController::class , 'create'])->name('create_product');
-    Route::post('/store', [dashboardProductController::class , 'store'])->name('store_product');
+        Route::resource('/user', dashboardUserController::class);
+        Route::resource('/product', dashboardProductController::class);
     });
     
     Route::middleware('auth')->group(function () {

@@ -36,7 +36,7 @@
                   </li>
                   @if (Auth::user()->is_admin == 1)
                   <li>
-                     <a href="{{route('dashboard')}}">Dashboard</a>
+                     <a href="{{route('user.index')}}">Dashboard</a>
                   </li>  
                   @endif
                   <li>
@@ -60,10 +60,13 @@
          <div class="links">
             <ul class="text-gray-200 font-bold bg-black  ">
                <li class="hover:bg-white hover:text-black rounded px-4 py-2 m-3">
-                  <a href="{{route('dashboard')}}">Dashboard</a>
+                  <a href="{{route('user.index')}}">users</a>
                </li>
                <li class="hover:bg-white hover:text-black rounded px-4 py-2 m-3">
-                  <a href="{{route('show_products')}}">Order</a>
+                  <a href="{{route('product.index')}}">products</a>
+               </li>
+               <li class="hover:bg-white hover:text-black rounded px-4 py-2 m-3">
+                  <a href="">orders</a>
                </li>
                <li class="hover:bg-white hover:text-black rounded px-4 py-2 m-3">
                   <a href="">Payments</a>

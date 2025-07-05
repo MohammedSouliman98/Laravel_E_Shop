@@ -24,7 +24,7 @@
                <td class="px-3 py-1 text-center border border-black/20">{{$user->id}}</td>
                <td class="px-3 py-1 text-center border border-black/20">{{$user->name}}</td>
                <td class="px-3 py-1 text-center border border-black/20">{{$user->email}}</td>
-               <td class="px-3 py-1 text-center border border-black/20 {{$user->is_admin === 1 ? 'bg-red-500' : 'bg-blue-500'}}">{{$user->is_admin}}</td>
+               <td class="px-3 py-1 text-center border border-black/20"> <span class="px-3 py-1 text-center rounded-lg {{$user->is_admin === 1 ? 'bg-green-500' : 'bg-red-500'}}">{{$user->is_admin === 1 ? 'yes' : 'no' }}</span></td>
                <td class="px-3 py-1 text-center border border-black/20">{{$user->created_at}}</td>
                <td class="px-3 py-1 text-center border border-black/20">
                   <div class="flex">
