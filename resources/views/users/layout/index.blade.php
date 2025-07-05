@@ -81,10 +81,15 @@
          </ul>
          <div class="auth w-1/2 flex justify-end items-center pr-10">
             @if (Auth::user())
-               <ul class="">
+               <ul class="flex gap-3">
                   <li>
                      {{Auth::user() -> name}}
                   </li>
+                  @if (Auth::user()->is_admin == 1)
+                  <li>
+                     <a href="{{route('dashboard')}}">Dashboard</a>
+                  </li>  
+                  @endif
                   <li>
                      <form action="{{route('logout')}}" method="POST">
                      @csrf   

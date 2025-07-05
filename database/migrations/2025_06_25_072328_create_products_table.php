@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('size_options')->nullable(); // e.g., "S,M,L,XL"
             $table->integer('stock')->default(0);
             $table->integer('rate')->default(0);
-            $table->boolean('is_trind')->default(false);
+            $table->boolean('is_trend')->default(false);
             $table->timestamps();
             $table->softDeletes(); // For soft deletion
         });

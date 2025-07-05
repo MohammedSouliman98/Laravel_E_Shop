@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\cart;
 use App\Models\product;
+use App\Models\User;
 use Illuminate\Http\Request;
+
+use function Pest\Laravel\get;
 
 class mainPageController extends Controller
 {

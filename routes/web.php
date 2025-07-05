@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\dashboardProductController;
+use App\Http\Controllers\dashboardUserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\mainPageController;
@@ -13,11 +15,17 @@ Route::group([
 ],function(){
     Route::get('/', [mainPageController::class , 'index']);
     
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->middleware(['auth', 'verified'])->name('dashboard');
+    Route::middleware(['auth' , 'is_admin'])->group(function() {
+        
+    Route::get('/dashboard', [dashboardUserController::class , 'show'])->name('dashboard');
+    Route::get('/products', [dashboardProductController::class , 'showall'])->name('show_products');
+    Route::get('/products/{id}', [dashboardProductController::class , 'show'])->name('show_product');
+    Route::get('/product/edit/{id}', [dashboardProductController::class , 'edit'])->name('edit_product');
+    Route::get('/create', [dashboardProductController::class , 'create'])->name('create_product');
+    Route::post('/store', [dashboardProductController::class , 'store'])->name('store_product');
+    });
     
-    Route::middleware('guest')->group(function () {
+    Route::middleware('auth')->group(function () {
         Route::get('/home' , [mainPageController::class , 'index'])->name('home');
         Route::get('/shop' , [mainPageController::class , 'shop'])->name('shop');
         Route::get('/detail/{id}' , [mainPageController::class , 'detail'])->name('detail');
