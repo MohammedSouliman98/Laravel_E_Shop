@@ -16,12 +16,12 @@ Route::group([
 ],function(){
     Route::get('/', [mainPageController::class , 'index']);
     
-    Route::middleware(['auth' , 'is_admin'])->group(function() {
+    Route::middleware(['guest'])->group(function() {
         Route::resource('/user', dashboardUserController::class);
         Route::resource('/product', dashboardProductController::class);
     });
     
-    Route::middleware('auth')->group(function () {
+    Route::middleware('guest')->group(function () {
         Route::get('/home' , [mainPageController::class , 'index'])->name('home');
         Route::get('/shop' , [mainPageController::class , 'shop'])->name('shop');
         Route::get('/detail/{id}' , [mainPageController::class , 'detail'])->name('detail');
@@ -29,6 +29,8 @@ Route::group([
         Route::get('/add_to_cart/{id}', [CartController::class , 'add'])->name('add_to_cart');
         Route::get('/delete_from_cart/{id}', [CartController::class , 'delete'])->name('delete_from_cart');
         Route::get('/contact' , [mainPageController::class , 'contact'])->name('contact');
+        Route::get('/filter',[mainPageController::class , 'filter'])->name('filter');
+        Route::get('/search',[mainPageController::class , 'search'])->name('search');
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

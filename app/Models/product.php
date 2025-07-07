@@ -18,4 +18,22 @@ class product extends Model
 'rate',
 'stock',
 'is_trend'];
+
+public function scopePrice($query,$minprice = null , $maxprice = null ,string $category = null ){
+if($minprice !== null && $maxprice !== null ){
+    return product::wherebetween('price', [$minprice, $maxprice]);
 }
+if($category !== null){
+    return product::where('category' , 'men');
+}
+
+}
+
+public function category(){
+    return $this->belongsTo(category::class);
+}
+
+
+}
+
+

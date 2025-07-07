@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Arr;
 
@@ -19,7 +20,7 @@ class productFactory extends Factory
     {
 
         $categories = ['Men', 'Women', 'Kids', 'Unisex'];
-        $sizes = ['S,M,L,XL', 'XS,S,M,L,XL', '28,30,32,34', 'One Size'];
+        $sizes = ['S','M','L','XL','XS'];
         $clothingTypes = ['T-Shirt', 'Jeans', 'Dress', 'Jacket', 'Hoodie', 'Shorts'];
 
         
@@ -28,7 +29,7 @@ class productFactory extends Factory
             'description' => $this->faker->paragraph(3),
             'price' => $this->faker->randomFloat(2, 10, 200),
             'images' => 'img/product-'  . random_int(1,8) .   '.jpg',
-            'category' => Arr::random($categories),
+            'category_id' => 1,
             'size_options' => Arr::random($sizes),
             'stock' => $this->faker->numberBetween(0, 100),
         ];

@@ -8,8 +8,9 @@
          <div class="w-30 ml-2 text-4xl font-bold">Shopper</div>
       </div>
    
-      <form action="" class="flex border border-black/20 items-center">
-         <input type="text" class="py-1 px-3 w-lg outline-none" placeholder="searsh">
+      <form action="{{route('search')}}" method="GET" class="flex border border-black/20 items-center">
+         @csrf
+         <input type="text" name="search" class="py-1 px-3 w-lg outline-none" placeholder="search">
          <button type="submit" class="size-10 border-l border-black/20   hover:text-amber-800 px-3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
           </svg>          
@@ -87,7 +88,7 @@
                   </li>
                   @if (Auth::user()->is_admin == 1)
                   <li>
-                     <a href="{{route('user.index')}}">Dashboard</a>
+                     <a href="{{route('user.index')}}" target="bluck">Dashboard</a>
                   </li>  
                   @endif
                   <li>

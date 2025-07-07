@@ -3,17 +3,17 @@
 namespace Database\Seeders;
 
 use App\Models\category;
-use App\Models\product;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class productSeeder extends Seeder
+class categoryseeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
-    {   
-        product::factory(10)->create();
+    {
+        category::factory(2)->create();
+        
     }
 }
