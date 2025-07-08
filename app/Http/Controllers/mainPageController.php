@@ -15,7 +15,7 @@ class mainPageController extends Controller
 
     public function index(){
         $product = product::select('name' , 'price','images','id')->simplePaginate(5);
-        return view('users.layout.home' ,['products' => $product]);
+        return view('users.layout.home' ,['products' => $product ]);
     }
     public function shop(){
         $product = product::select('name' , 'price','images','id','size_options')->simplePaginate(5);

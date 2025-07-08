@@ -11,7 +11,7 @@ shopping cart
 <div class="font-normal text-xl my-5"><a href="">home</a> - <a href="">shopping cart</a></div>
 </div>
 
-<div class="cart  px-15 my-10 flex">
+<div class="cart-table  px-15 my-10 flex">
    <div class="table w-2/3">
       <table class=" w-full border border-black/20">
          <thead>

@@ -17,22 +17,62 @@
           </button>
       </form>
       <div class="cart-likes flex">
-      <div class="likes mx-3 flex rounded border border-black/20 px-2 py-1" >
-         <div class="text-amber-800">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-               <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
-             </svg>
-             
+      <div class="likes mx-3">
+         <div class="cursor-pointer  w-15 h-10 flex justify-center items-center px-2 py-1 rounded border border-black/20">
+            <div class="text-amber-800">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                  <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
+                </svg>
+            </div>
+            <span>0</span>
          </div>
-       <span>0</span>
        </div>
-      <div class="cart ml-3 flex rounded border border-black/20 px-2 py-1">
-         <div class="text-amber-800">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-               <path d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 0 0 0-1.5H5.378A2.25 2.25 0 0 1 7.5 15h11.218a.75.75 0 0 0 .674-.421 60.358 60.358 0 0 0 2.96-7.228.75.75 0 0 0-.525-.965A60.864 60.864 0 0 0 5.68 4.509l-.232-.867A1.875 1.875 0 0 0 3.636 2.25H2.25ZM3.75 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM16.5 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
-             </svg>
+      <div class="cart-btn w-15 h-10 relative ml-3 flex " id="cart-btn">
+         <div class="cursor-pointer flex justify-center items-center px-2 py-1 rounded border border-black/20">
+            <div class="text-amber-800">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                  <path d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 0 0 0-1.5H5.378A2.25 2.25 0 0 1 7.5 15h11.218a.75.75 0 0 0 .674-.421 60.358 60.358 0 0 0 2.96-7.228.75.75 0 0 0-.525-.965A60.864 60.864 0 0 0 5.68 4.509l-.232-.867A1.875 1.875 0 0 0 3.636 2.25H2.25ZM3.75 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM16.5 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
+                </svg>
+            </div>
+          <span>100</span>
          </div>
-       <span>0</span>
+       <div class="cart-detail w-auto min-h-20 bg-blue-300 border border-2 border-gray-500 overflow-hidden rounded-lg absolute hidden block right-20" id="cart-detail">
+         <table class="">
+            <thead>
+               <tr class="px-3 py-3  bg-gray-200">
+                  <th class="px-6 py-3">name</th>
+                  <th class="px-6 py-3">price</th>
+                  <th class="px-6 py-3">quantity</th>
+                  <th class="px-6 py-3">remove</th>
+               </tr>
+            </thead>
+            <tbody class="font-bold">
+               {{-- @foreach ($products as $product) --}}
+               <tr>
+                  <td class="px-6 py-3 text-center border border-black/20"><a href=>dsfs</a></td>
+                  <td class="px-6 py-3 text-center border border-black/20">100$</td>
+                  <td class="px-6 py-3 text-center border border-black/20 ">
+                     <div class="flex justify-center">
+                        <div class="number w-10   font-bold text-center content-center" id="number">21</div>
+                     </div>
+                  </td>
+                  <td class="px-6 py-3 text-center border border-black/20">
+                     <form action={{route('delete_from_cart', ["d" , 'route' => 'cartbtn'])}} method='get'>
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="text-2xl bg-red-400 size-7 text-center content-center cursor-pointer" id="remove">
+                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            </svg>                   
+                        </button>
+                     </form>
+                  </td>
+               </tr>
+               {{-- @endforeach --}}
+               
+            </tbody>
+         </table>
+       </div>
        </div>
       </div>
       <ul class="">
