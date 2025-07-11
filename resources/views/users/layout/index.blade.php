@@ -90,7 +90,7 @@
    <div class="flex">
          <div class="dropmenu-com w-1/4 mx-2 px-10 absolute">
             <div id="dropmenu-btn" class="flex justify-between bg-amber-600/80 w-full h-15 p-3 font-bold" >
-               <button class="normal-case">catiories</button>
+               <button class="normal-case">{{trans('index.category')}}</button>
                <span class="content-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                   <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                 </svg>
@@ -116,9 +116,9 @@
          <ul class="flex justify-between items-center w-1/2 h-15 font-bold ">
             <a href={{ route('home')}} class="hover:text-amber-800/50 ">{{trans('index.home')}}</a>
             <a href={{ route('shop')}} class="hover:text-amber-800/50 ">{{ trans('index.shop') }}</a>
-            <a href={{route('detail',1)}} class="hover:text-amber-800/50 ">shop detail</a>
-            <a href={{route('shopping-cart')}} class="hover:text-amber-800/50 ">shopping cart</a>
-            <a href={{route('contact')}} class="hover:text-amber-800/50 ">contact</a>
+            <a href={{route('detail',1)}} class="hover:text-amber-800/50 ">{{trans('index.shop detial')}}</a>
+            <a href={{route('shopping-cart')}} class="hover:text-amber-800/50 ">{{trans('index.shopping cart')}}</a>
+            <a href={{route('contact')}} class="hover:text-amber-800/50 ">{{trans('index.contact')}}</a>
          </ul>
          <div class="auth w-1/2 flex justify-end items-center pr-10">
             @if (Auth::user())
@@ -134,13 +134,13 @@
                   <li>
                      <form action="{{route('logout')}}" method="POST">
                      @csrf   
-                     <button class="logout hover:text-amber-800/50 px-3" >Logout</button>
+                     <button class="logout hover:text-amber-800/50 px-3" >{{trans('auth.logout')}}</button>
                      </form>      
                   </li>    
                </ul>           
             @else
-            <a href={{route('login')}} class="login hover:text-amber-800/50 px-3">Login</a>
-            <a href={{route('register')}} class="register hover:text-amber-800/50 pl-3">Register</a>
+            <a href={{route('login')}} class="login hover:text-amber-800/50 px-3">{{trans('auth.login')}}</a>
+            <a href={{route('register')}} class="register hover:text-amber-800/50 pl-3">{{trans('auth.register')}}</a>
                      
             @endif
 

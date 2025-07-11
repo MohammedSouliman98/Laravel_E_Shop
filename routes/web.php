@@ -16,12 +16,12 @@ Route::group([
 ],function(){
     Route::get('/', [mainPageController::class , 'index']);
     
-    Route::middleware(['guest'])->group(function() {
+    Route::middleware(['auth' , 'is_admin'])->group(function() {
         Route::resource('/user', dashboardUserController::class);
         Route::resource('/product', dashboardProductController::class);
     });
     
-    Route::middleware('guest')->group(function () {
+    Route::middleware('auth')->group(function () {
         Route::get('/home' , [mainPageController::class , 'index'])->name('home');
         Route::get('/shop' , [mainPageController::class , 'shop'])->name('shop');
         Route::get('/detail/{id}' , [mainPageController::class , 'detail'])->name('detail');

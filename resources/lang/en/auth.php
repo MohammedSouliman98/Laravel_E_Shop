@@ -1,4 +1,7 @@
 <?php 
 return [
-   'login'  => 'login'
+   'login'  => 'login',
+   'register'  => 'register',
+   'logout'  => 'logout',
+   
 ];

@@ -56,25 +56,25 @@
 <div class="porducts ml-3 my-5">
    <div class="grid grid-cols-3 gap-5">
          <div class="h-100 border border-black/20 product-img">
-            <div class="number-of-porduct h-15 text-end mx-5 text-black/50 py-3">15 porduct</div>
+            <div class="number-of-porduct h-15 text-end mx-5 text-black/50 py-3">15 {{trans('product.pordcut')}}</div>
             <div class="h-70 overflow-hidden">
                <img src={{asset("img/cat-1.jpg")}} class="h-full mx-auto" alt="">
             </div>
-            <div class="name h-15 font-bold text-2xl mx-5">Men's dresses</div>
+            <div class="name h-15 font-bold text-2xl mx-5">Men</div>
          </div>
          <div class="h-100 border border-black/20 product-img">
-            <div class="number-of-porduct h-15 text-end mx-5 text-black/50 py-3">15 porduct</div>
+            <div class="number-of-porduct h-15 text-end mx-5 text-black/50 py-3">15 {{trans('product.pordcut')}}</div>
             <div class="h-70 overflow-hidden">
                <img src={{asset("img/cat-2.jpg")}} class="h-full mx-auto" alt="">
             </div>
-            <div class="name h-15 font-bold text-2xl mx-5">Men's dresses</div>
+            <div class="name h-15 font-bold text-2xl mx-5">woman</div>
          </div>
          <div class="h-100 border border-black/20 product-img">
-            <div class="number-of-porduct h-15 text-end mx-5 text-black/50 py-3">15 porduct</div>
+            <div class="number-of-porduct h-15 text-end mx-5 text-black/50 py-3">15 {{trans('product.pordcut')}}</div>
             <div class="h-70 overflow-hidden">
                <img src={{asset("img/cat-3.jpg")}} class="h-full mx-auto" alt="">
             </div>
-            <div class="name h-15 font-bold text-2xl mx-5">Men's dresses</div>
+            <div class="name h-15 font-bold text-2xl mx-5">child</div>
          </div>
    </div>
 </div>
@@ -87,7 +87,7 @@
 <div class="trandy-porducts px-15">
    <div class="titel-of-section w-full text-center my-10">
       <div class="line w-100 h-1 bg-black mx-auto"></div>
-      <h1 class="text-4xl font-bold p-5">Trandy Products</h1>
+      <h1 class="text-4xl font-bold p-5">{{trans('section.Trandy Products')}}</h1>
    </div>
    <div class="products my-10">
       <div class="w-full grid grid-cols-4 gap-4">
@@ -100,7 +100,7 @@
 <div class="updates bg-blue-200 py-15 text-center ">
    <div class="titel-of-section w-full text-center my-10">
       <div class="line w-100 h-1 bg-black mx-auto"></div>
-      <h1 class="text-4xl font-bold p-5">Stay Updated</h1>
+      <h1 class="text-4xl font-bold p-5">{{trans('section.Stay Updated')}}</h1>
    </div>
    <div class="w-150 mx-auto text-black/70 font-bold">
       <p>Amet lorem at rebum amet dolores. Elitr lorem dolor sed amet diam labore at justo ipsum eirmod duo labore labore.</p>
@@ -114,7 +114,7 @@
 <div class="just-arrived px-15">
    <div class="titel-of-section w-full text-center my-10">
       <div class="line w-100 h-1 bg-black mx-auto"></div>
-      <h1 class="text-4xl font-bold p-5">Just Arrived</h1>
+      <h1 class="text-4xl font-bold p-5">{{trans('section.Just Arrived')}}</h1>
    </div>
    <div class="products my-10">
       <div class="w-full grid grid-cols-4 gap-4">
