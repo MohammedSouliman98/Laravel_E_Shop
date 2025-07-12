@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
             $table->string('product_id');
+            $table->foreignId('user_id')->references('id')->on('users');
             $table->string('name');
             $table->decimal('price',10,2);
             $table->integer('quantity')->default(1);

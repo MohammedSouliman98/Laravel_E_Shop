@@ -5,15 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\cart;
 use App\Models\category;
 use App\Models\product;
-use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-use function Pest\Laravel\get;
 
 class mainPageController extends Controller
 {
 
     public function index(){
+
         $product = product::select('name' , 'price','images','id')->simplePaginate(5);
         return view('users.layout.home' ,['products' => $product ]);
     }
@@ -27,7 +27,7 @@ class mainPageController extends Controller
         return view('users.layout.shop-details',['product' => $product]);
     }
     public function cart(){
-        $products = cart::all();
+        $products = cart::where("user_id" , Auth::user()->id)->get();
         return view('users.layout.shopping-cart',['products' => $products]);
     }
     public function contact(){
