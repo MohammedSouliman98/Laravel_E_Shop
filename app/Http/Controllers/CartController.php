@@ -32,9 +32,7 @@ class CartController extends Controller
         return redirect()->route('shopping-cart');
     }
     public function delete(Request $request){
-        
-        $product_for_delete = cart::find($request->id);
-        $product_for_delete->delete();
+        cart::find($request->id)->delete();
         return back();
     }
     

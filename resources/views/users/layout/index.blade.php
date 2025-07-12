@@ -34,7 +34,7 @@
                   <path d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 0 0 0-1.5H5.378A2.25 2.25 0 0 1 7.5 15h11.218a.75.75 0 0 0 .674-.421 60.358 60.358 0 0 0 2.96-7.228.75.75 0 0 0-.525-.965A60.864 60.864 0 0 0 5.68 4.509l-.232-.867A1.875 1.875 0 0 0 3.636 2.25H2.25ZM3.75 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM16.5 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
                 </svg>
             </div>
-          <span>100</span>
+          <span>{{$allcart->count()}}</span>
          </div>
        <div class="cart-detail w-auto min-h-20 bg-blue-300 border border-2 border-gray-500 overflow-hidden rounded-lg absolute hidden block right-20" id="cart-detail">
          <table class="">
@@ -47,17 +47,17 @@
                </tr>
             </thead>
             <tbody class="font-bold">
-               {{-- @foreach ($products as $product) --}}
+               @foreach ($allcart as $cart)
                <tr>
-                  <td class="px-6 py-3 text-center border border-black/20"><a href=>dsfs</a></td>
-                  <td class="px-6 py-3 text-center border border-black/20">100$</td>
+                  <td class="px-6 py-3 text-center border border-black/20"><a href=>{{$cart->name}}</a></td>
+                  <td class="px-6 py-3 text-center border border-black/20">{{$cart->price}}$</td>
                   <td class="px-6 py-3 text-center border border-black/20 ">
                      <div class="flex justify-center">
-                        <div class="number w-10   font-bold text-center content-center" id="number">21</div>
+                        <div class="number w-10   font-bold text-center content-center" id="number">{{$cart->quantity}}</div>
                      </div>
                   </td>
                   <td class="px-6 py-3 text-center border border-black/20">
-                     <form action={{route('delete_from_cart', ["d" , 'route' => 'cartbtn'])}} method='get'>
+                     <form action={{route('delete_from_cart', [$cart->id])}} method='Post'>
                         @csrf
                         @method('delete')
                         <button type="submit" class="text-2xl bg-red-400 size-7 text-center content-center cursor-pointer" id="remove">
@@ -68,7 +68,7 @@
                      </form>
                   </td>
                </tr>
-               {{-- @endforeach --}}
+               @endforeach
                
             </tbody>
          </table>
@@ -130,7 +130,7 @@
                   </li>
                   @if (Auth::user()->is_admin == 1)
                   <li>
-                     <a href="{{route('user.index')}}" target="bluck">Dashboard</a>
+                     <a href="{{route('user.index')}}" target="bluck">{{ trans('auth.dashboard') }}</a>
                   </li>  
                   @endif
                   <li>

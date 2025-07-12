@@ -8,7 +8,10 @@
 @section('content')
 
 
-   <div class="main_dashboard w-6/8 mx-2">
+   <div class="main_dashboard w-6/8 mx-2"> 
+<div  class="bg-blue-500 rounded text-white px-3 py-2 mb-3 w-30 text-center">
+   <a href="{{route('user.create')}}">{{trans('button.add_user')}}</a>
+</div>
       <table class="table w-full border border-black/20">
          <thead class="  bg-gray-200">
             <th class="px-6 py-3">#Id</th>
@@ -30,12 +33,11 @@
                <td class="px-3 py-1 text-center border border-black/20">{{$user->created_at}}</td>
                <td class="px-3 py-1 text-center border border-black/20">
                   <div class="flex">
-                     @if (Auth::user()->id === $user->id)
-                        <a href="" class="px-3 py-1 mx-1 bg-black text-white rounded">edit</a>
-                        @else
-                        <a href="" class="px-3 py-1 mx-1 bg-black text-white rounded">edit</a>
-                     <form action="">
-                        <button type="submit" class="px-3 py-1 mx-1 bg-red-500 rounded">delete</button>
+                     @if (Auth::user()->id !== $user->id)
+                     <form action="{{route('user.destroy' , [$user->id])}}" method="POST">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="px-3 py-1 mx-1 bg-red-500 rounded">{{ trans('button.delete') }}</button>
                      </form>
                      @endif
                   </div>

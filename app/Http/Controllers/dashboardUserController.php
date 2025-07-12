@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class dashboardUserController extends Controller
 {
@@ -21,15 +22,21 @@ class dashboardUserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.add_user');
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        //
+    {   
+        $user = $request->validate([
+            'name' => 'required|unique:users,name',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:8',
+        ]);
+        User::create($user);
+        return redirect()->route('user.index');
     }
 
     /**
@@ -61,6 +68,7 @@ class dashboardUserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        User::find($id)->delete();
+        return back();
     }
 }

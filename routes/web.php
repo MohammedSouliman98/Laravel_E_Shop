@@ -27,7 +27,7 @@ Route::group([
         Route::get('/detail/{id}' , [mainPageController::class , 'detail'])->name('detail');
         Route::get('/shopping-cart' , [mainPageController::class , 'cart'])->name('shopping-cart');
         Route::get('/add_to_cart/{id}', [CartController::class , 'add'])->name('add_to_cart');
-        Route::get('/delete_from_cart/{id}', [CartController::class , 'delete'])->name('delete_from_cart');
+        Route::delete('/delete_from_cart/{id}', [CartController::class , 'delete'])->name('delete_from_cart');
         Route::get('/contact' , [mainPageController::class , 'contact'])->name('contact');
         Route::get('/filter',[mainPageController::class , 'filter'])->name('filter');
         Route::get('/search',[mainPageController::class , 'search'])->name('search');

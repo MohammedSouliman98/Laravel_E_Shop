@@ -25,9 +25,9 @@
          <ul class="flex justify-between items-center w-1/2 h-15 font-bold ">
             <a href={{ route('home')}} class="hover:text-amber-800/50 ">{{trans('index.home')}}</a>
             <a href={{ route('shop')}} class="hover:text-amber-800/50 ">{{ trans('index.shop') }}</a>
-            <a href={{route('detail',1)}} class="hover:text-amber-800/50 ">shop detail</a>
-            <a href={{route('shopping-cart')}} class="hover:text-amber-800/50 ">shopping cart</a>
-            <a href={{route('contact')}} class="hover:text-amber-800/50 ">contact</a>
+            <a href={{route('detail',1)}} class="hover:text-amber-800/50 ">{{ trans('index.shop detial') }}</a>
+            <a href={{route('shopping-cart')}} class="hover:text-amber-800/50 ">{{ trans('index.shopping cart') }}</a>
+            <a href={{route('contact')}} class="hover:text-amber-800/50 ">{{ trans('index.contact') }}</a>
          </ul>
          <div class="auth w-1/2 flex justify-end items-center pr-10">
                <ul class="flex gap-3">
@@ -36,13 +36,13 @@
                   </li>
                   @if (Auth::user()->is_admin == 1)
                   <li>
-                     <a href="{{route('user.index')}}">Dashboard</a>
+                     <a href="{{route('user.index')}}">{{ trans('auth.dashboard') }}</a>
                   </li>  
                   @endif
                   <li>
                      <form action="{{route('logout')}}" method="POST">
                      @csrf   
-                     <button class="logout hover:text-amber-800/50 px-3" >Logout</button>
+                     <button class="logout hover:text-amber-800/50 px-3" >{{ trans('auth.logout') }}</button>
                      </form>      
                   </li>    
                </ul>           

@@ -78,6 +78,7 @@ class dashboardProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        product::find($id)->delete();
+        return back();
     }
 }
