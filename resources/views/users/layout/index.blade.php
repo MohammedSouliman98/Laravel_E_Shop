@@ -37,7 +37,7 @@
                </div>
              <span>{{Auth::check() ? $allcart->count() : 0}}</span>
             </div>
-          <div class="cart-detail w-auto min-h-20 bg-blue-300 border border-2 border-gray-500 overflow-hidden rounded-lg absolute hidden block right-20" id="cart-detail">
+          <div class="cart-detail w-auto min-h-20 max-h-100 overflow-y-scroll bg-blue-300 border border-2 border-gray-500 overflow-hidden rounded-lg absolute hidden block right-20 " id="cart-detail">
             <table class="">
                <thead>
                   <tr class="px-3 py-3  bg-gray-200">

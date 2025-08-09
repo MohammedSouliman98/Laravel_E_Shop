@@ -58,10 +58,10 @@ OUR SHOP
          <div class="filter-size border-b py-5 h-80 flex flex-col justify-between">
             <h2 class="font-bold capitalize text-xl ">filter by size</h2>
             
-            @foreach ($products as $size_option)
+            @foreach ($size_options as $size)
                <div class="flex justify-between">
-                  <input type="radio" value="{{$size_option->size_options}}" name="size" id="{{$size_option->size_options}}">
-                  <label for="{{$size_option->size_options}}" class="uppercase">{{$size_option->size_options}}</label>
+                  <input type="radio" value="{{$size->name}}" name="size" id="{{$size->name}}">
+                  <label for="{{$size->name}}" class="uppercase">{{$size->name}}</label>
                   <div class="number-of-product px-2 inline border border-black/20 ">100</div>
                </div>
             @endforeach

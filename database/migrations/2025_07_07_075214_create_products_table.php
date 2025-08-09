@@ -18,7 +18,6 @@ return new class extends Migration
             $table->decimal('price', 10, 2); // e.g., 9999.99
             $table->string('images')->nullable(); // Store multiple image paths as JSON
             $table->foreignId('category_id')->references('id')->on('categories'); 
-            $table->string('size_options')->nullable(); // e.g., "S,M,L,XL"
             $table->integer('stock')->default(0);
             $table->integer('rate')->default(0);
             $table->boolean('is_trend')->default(false);

@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\cart;
 use App\Models\category;
+use App\Models\Color;
 use App\Models\product;
+use App\Models\Product_option;
+use App\Models\Size;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,13 +21,18 @@ class mainPageController extends Controller
         return view('users.layout.home' ,['products' => $product ]);
     }
     public function shop(){
-        $product = product::select('name' , 'price','images','id','size_options')->simplePaginate(5);
-        $category = category::select('name',"id" ,'description')->get();
-        return view('users.layout.shop',['products' => $product , 'categories' => $category]);
+        $product = product::select('name' , 'price','images','id')->paginate(15);
+        $size = Size::all()->unique('name');
+        $category = category::select('name',"id")->get();
+        return view('users.layout.shop',['products' => $product , 'categories' => $category->unique('name') , 'size_options' => $size]);
     }
     public function detail(Request $request){
-        $product = product::find($request->id, ['name', 'description', 'images' , 'size_options','price']);
-        return view('users.layout.shop-details',['product' => $product]);
+        $product = product::with('category')->find($request->id, ['name', 'description', 'images' ,'price']);
+        $productz = Product::find($request->id)->options->pluck('color_id');
+        $product_color = color::whereIn("id" , $productz)->get()->pluck('name');
+        $product_size = size::whereIn("id" , $productz)->get()->pluck('name');
+        //  dd($product_color);
+        return view('users.layout.shop-details',['product' => $product  , 'product_color' => $product_color  , 'product_size' => $product_size] );
     }
     public function cart(){
         $products = cart::where("user_id" , Auth::user()->id)->get();
@@ -36,8 +44,7 @@ class mainPageController extends Controller
     }
     public function filter(Request $request){
         $product = product::query();   
-        if($request->has('price'))
-            {
+        if($request->has('price')){
                 if($request->price == '0-100')
                 $product->where('price', '<' ,100);
 
@@ -54,18 +61,25 @@ class mainPageController extends Controller
             if($request->has('category')){
                 $product->with('category')->where('category_id',request('category'));
             }
-            if($request->has('size')){
-                $product->where('size_options', request('size'));
+            if($request->has('size')){  
+               $size =  Size::where('name', request('size'))->get();
             }
-            $product->select('name' , 'price','images','id','size_options');
-            $category = category::select('name',"id" ,'description')->get();
-        return view('users.layout.shop',['products' => $product->paginate(5) , 'categories' => $category]);
-    }
+            $product->select('name' , 'price','images','id')->get();
+            $category = category::select('name',"id")->get();
+            return view('users.layout.shop',['products' => $product , 'categories' => $category->unique('name') , 'size_options' => $size ]);
+        }
     public function search(Request $request){
         $product = product::select('name' , 'price','images','id','size_options')->where('name', 'like' , "%{$request->search}%")
                     ->orwhere('description', 'like' , "%{$request->search}%")
                     ->paginate(5);
         $category = category::select('name',"id" ,'description')->get();
         return view('users.layout.shop',['products' => $product , 'categories' => $category]);
+  
+    }
+
+    public function test(){
+        // $test = product::with(['options.colors', 'options.sizes'])->find(1);
+        // $color = Color::where('id' , $test)->get();
+        // return $test;
     }
 }

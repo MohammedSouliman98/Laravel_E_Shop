@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Product_option;
 
 class product extends Model
 {
@@ -32,8 +33,15 @@ if($category !== null){
 public function category(){
     return $this->belongsTo(category::class);
 }
-
-
+public function options(){
+    return $this->hasMany(Product_option::class);
+}
+public function colors(){
+    return $this->belongsToMany(Color::class);
+}
+public function sizes(){
+    return $this->belongsToMany(Size::class);
+}
 }
 
 

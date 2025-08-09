@@ -15,6 +15,7 @@ Route::group([
 	'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
 ],function(){
     Route::get('/', [mainPageController::class , 'index']);
+    Route::get('/test', [mainPageController::class , 'test']);
     
     Route::middleware(['auth' , 'is_admin'])->group(function() {
         Route::resource('/user', dashboardUserController::class);

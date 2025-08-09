@@ -20,7 +20,6 @@ class productFactory extends Factory
     {
 
         $categories = ['Men', 'Women', 'Kids', 'Unisex'];
-        $sizes = ['S','M','L','XL','XS'];
         $clothingTypes = ['T-Shirt', 'Jeans', 'Dress', 'Jacket', 'Hoodie', 'Shorts'];
 
         
@@ -30,7 +29,6 @@ class productFactory extends Factory
             'price' => $this->faker->randomFloat(2, 10, 200),
             'images' => 'img/product-'  . random_int(1,8) .   '.jpg',
             'category_id' => 1,
-            'size_options' => Arr::random($sizes),
             'stock' => $this->faker->numberBetween(0, 100),
         ];
     }

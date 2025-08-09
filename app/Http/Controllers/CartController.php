@@ -14,7 +14,7 @@ class CartController extends Controller
 {
     public function add(Request $request ){
         $user_id = Auth::user()->id;
-        $product = product::find($request->id,['id','name','price','size_options']);
+        $product = product::find($request->id,['id','name','price']);
         $is_product_existe = cart::where('user_id' , $user_id)->where('product_id' , $product->id)->count();
         if($is_product_existe > 0 ){
             $current_quantity = cart::where('product_id' , $product->id)->value('quantity'); 
@@ -27,11 +27,10 @@ class CartController extends Controller
                 'user_id' =>   $user_id  ,
                 'name' => $product->name,
                 'price' => $product->price,
-                'size_options' => $product->size_options
             ]);
         }
         
-        return redirect()->route('shopping-cart');
+        return back();
     }
     public function delete(Request $request){
         cart::find($request->id)->delete();

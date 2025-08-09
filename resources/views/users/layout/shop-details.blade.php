@@ -19,55 +19,40 @@
          <div class="rate">5 star</div>
          <div class="price font-bold">{{$product->price}}$</div>
          <p>{{$product->description}}</p>     
-         <form action="" class="h-40 flex flex-col">
+         <form action="" method="POST" class="h-40 flex flex-col">
+            @csrf
             <div class="size flex font-bold my-3">
                <div class="capitalize">size : </div>
                <div action="" class="flex justify-around  ml-5">
+
+
+
+
+                  @foreach ($product_size  as $size)
                   <div class="">
-                     <input type="radio" name="shop" id="xs">
-                     <label for="xs" class="capitalize px-3">xs</label>
+                     <input type="radio" name="size" id="black">
+                     <label for="black" class="capitalize px-3">{{$size}}</label>
                   </div>
-                  <div class="">
-                     <input type="radio" name="shop" id="s">
-                     <label for="s" class="capitalize px-3">s</label>
-                  </div>
-                  <div class="">
-                     <input type="radio" name="shop" id="m">
-                     <label for="m" class="capitalize px-3">m</label>
-                  </div>
-                  <div class="">
-                     <input type="radio" name="shop" id="l">
-                     <label for="l" class="capitalize px-3">l</label>
-                  </div>
-                  <div class="">
-                     <input type="radio" name="shop" id="xl">
-                     <label for="xl" class="capitalize px-3">xl</label>
-                  </div>
+                  @endforeach
+
+
+
+
+
                </div>
             </div>
             <div class="color flex font-bold my-3">
                <div class="capitalize">color : </div>
                <div action="" class="flex justify-around  ml-5">
+                  {{-- @foreach ($product_color as $color) --}}
+                  @foreach ($product_color  as $color)
                   <div class="">
-                     <input type="radio" name="shop" id="black">
-                     <label for="black" class="capitalize px-3">black</label>
+                     <input type="radio" name="color" id="black">
+                     <label for="black" class="capitalize px-3">{{$color}}</label>
                   </div>
-                  <div class="">
-                     <input type="radio" name="shop" id="white">
-                     <label for="white" class="capitalize px-3">wihte</label>
-                  </div>
-                  <div class="">
-                     <input type="radio" name="shop" id="blue">
-                     <label for="blue" class="capitalize px-3">blue</label>
-                  </div>
-                  <div class="">
-                     <input type="radio" name="shop" id="red">
-                     <label for="red" class="capitalize px-3">red</label>
-                  </div>
-                  <div class="">
-                     <input type="radio" name="shop" id="brown">
-                     <label for="brown" class="capitalize px-3">brown</label>
-                  </div>
+                  @endforeach
+                  
+                  {{-- @endforeach --}}
                </div>
             </div>
             <div class="flex">
