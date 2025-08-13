@@ -11,9 +11,9 @@ shopping cart
 <div class="font-normal text-xl my-5"><a href="">home</a> - <a href="">shopping cart</a></div>
 </div>
 
-<div class="cart-table  px-15 my-10 flex">
-   <div class="table w-2/3">
-      <table class=" w-full border border-black/20">
+<div class="cart-table  px-15 my-10 flex max-lg:flex-col">
+   <div class="table w-full lg:w-2/3 overflow-x-scroll">
+      <table class=" w-full border border-black/20 overflow-scroll">
          <thead>
             <tr class="px-6 py-3  bg-gray-200">
                <th class="px-6 py-3">products</th>
@@ -63,12 +63,12 @@ shopping cart
          </tbody>
       </table>
    </div>
-   <div class="cart-detail w-1/3 mx-5">
-      <form action="" class="border border-black/20 flex mb-5">
+   <div class="cart-detail lg:w-1/3 sm:max-lg:w-1/2 w-full  mx-auto lg:mx-5 max-lg:py-5">
+      <form action="" class="border w-full border-black/20 flex mb-5">
          <input type="text" name="" placeholder="coupon code" class="w-2/3 p-3 font-bold" id="">
          <input type="submit" value="Aplly coupon" class="w-1/3 p-3 bg-amber-200 text-gray-600">
       </form>
-      <form action="" class="cart-summary border border-black/20">
+      <form action="" class="w-full cart-summary border border-black/20">
          <h2 class="font-bold text-xl bg-gray-200 px-6 py-3">cart summary</h2>
          <table class="w-full">
             <tbody class="font-bold border-b border-black/20">

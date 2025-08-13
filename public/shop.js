@@ -4,16 +4,14 @@ var btn =document.querySelectorAll('.back-next-btn');
 var slider = document.getElementById('slider');
 var cartbtn = document.getElementById('cart-btn');
 var cartdetail = document.getElementById('cart-detail');
+var filter = document.getElementById('filters');
+var filterbtn = document.getElementById('filter-btn');
 var image = ["carousel-1" , "carousel-2"] ;
 var i = 0;
 
 
 
-dropbtn.addEventListener('click' ,()=>{
 
-dropmenu.classList.toggle('hidden');
-
-})
 
 
 btn.forEach(btn =>{
@@ -48,9 +46,20 @@ function slid(numofimag = image.length){
 }
 
 
-function getcart(){
+function getcart(element){
   
-   cartdetail.classList.toggle('hidden')
-
+   element.classList.toggle('hidden')
 }
-cartbtn.addEventListener('click' , getcart)
+
+cartbtn.addEventListener('click' ,()=>{
+   getcart(cartdetail)
+})
+
+filterbtn.addEventListener('click' ,()=>{
+   getcart(filter)
+})
+
+dropbtn.addEventListener('click' ,()=>{
+   getcart(dropmenu)
+})
+

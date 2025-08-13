@@ -11,10 +11,10 @@
 </div>
 
 <div class="px-15 my-10 ">
-   <div class="flex mb-10 h-125">
-      <div class="border-b border-black/10 overflow-hidden w-2/5" style="background-image: url({{ asset($product->images) }}); background-size:contain">
+   <div class="flex max-md:flex-col  mb-10 md:h-125">
+      <div class="border-b border-black/10 overflow-hidden  w-full h-125 md:w-2/5 bg-[url({{ asset($product->images) }})] bg-no-repeat bg-cover bg-center" >
       </div>
-      <div class="flex flex-col justify-around w-3/5  px-15 ">
+      <div class=" flex flex-col justify-around md:w-3/5  px-15 ">
          <h2 class="capitalize font-bold text-3xl">{{$product->name}}</h2>
          <div class="rate">5 star</div>
          <div class="price font-bold">{{$product->price}}$</div>
@@ -105,8 +105,8 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, inventore dolorem explicabo, ducimus labore consectetur illo reprehenderit reiciendis animi consequatur, cupiditate sequi cum temporibus nisi suscipit ab aut architecto unde.
          </p>
       </div>
-      <div class="reviews-section flex gap-5 w-full">
-         <div class="w-1/2">
+      <div class="reviews-section flex max-md:flex-col gap-5 w-full">
+         <div class="md:w-1/2 w-full max-md:border-b max-md:py-5">
             <h2 class="font-bold text-2xl">1 reviews for "colorful stylish shirt"</h2>
             <div class="flex flex-col">
                <div class="one flex gap-5 my-5">
@@ -121,7 +121,7 @@
                </div>
             </div>
          </div>
-         <div class="add-review w-1/2 ">
+         <div class="add-review md:w-1/2 w-full ">
             <h2 class="font-bold text-2xl">leave a review</h2>
             <form action="" class="w-full flex flex-col">
                <h1 class="text-gray-500 text-sm my-5">Your email address will not be published. Required fields are marked *</h1>

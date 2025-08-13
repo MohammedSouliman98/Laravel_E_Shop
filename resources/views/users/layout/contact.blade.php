@@ -14,9 +14,9 @@
    <div class="line w-100 h-1 bg-black mx-auto"></div>
    <h1 class="text-4xl font-bold p-5">Contact Us</h1>
 </div>
-<div class="flex px-15">
+<div class="flex max-md:flex-col px-15">
    
-   <form action="" class="w-3/5 flex flex-col">
+   <form action="" class="md:w-3/5 w-full flex flex-col">
       <input type="text" name="name" id="name" placeholder="Your Name" class="w-full px-6 py-3 text-xl font-bold text-gray-600/50 border border-black/10 mb-5">
       <input type="email" name="email" id="email" placeholder="Your Email" class="w-full px-6 py-3 text-xl font-bold text-gray-600/50 border border-black/10 mb-5">
       <input type="text" name="subject" id="subject" placeholder="Subject" class="w-full px-6 py-3 text-xl font-bold text-gray-600/50 border border-black/10 mb-5">
@@ -26,7 +26,7 @@
       </div>
    </form>
 
-   <div class="w-2/5 ml-5 text-gray-500/80">
+   <div class="md:w-2/5 w-full md:ml-5 max-md:my-5 text-gray-500/80">
       <h2 class="font-bold text-2xl text-black">Get In Touch</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus facere tempora magnam iure error eum obcaecati et magni, autem, blanditiis laborum repellat explicabo repellendus quia quibusdam necessitatibus, maxime quam illo?</p>
       <div class="store-1">

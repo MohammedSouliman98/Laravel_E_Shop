@@ -1,5 +1,5 @@
-<div class="w-full h-100 capitalize bg-blue-200 px-10 mt-10">
-   <div class="grid grid-cols-3 gap-5 h-3/4 pt-20">
+<div class="w-full h-full capitalize bg-blue-200 px-10 mt-10">
+   <div class="grid sm:gird-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 h-3/4 pt-20">
       <div class="px-4">
          <div class="brand flex items-center text-center">
             <span class="size-15 border border-white/80 text-5xl font-bold text-amber-800/50 content-cneter">E</span>
@@ -23,7 +23,7 @@
       </div>
       <div class="quick-links mx-auto">
          <h2 class="text-2xl font-bold my-2">Quick Links</h2>
-         <ul class="flex flex-col justify-around h-50 font-bold text-gray-500 ">
+         <ul class="grid sm:grid-cols-2 lg:grid-cols-1   h-50 font-bold text-gray-500 ">
             <li class=""><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4 inline">
                <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd" />
              </svg>
@@ -56,7 +56,7 @@
             </li>
          </ul>
       </div>
-      <div class="Newsletter mx-auto w-70">
+      <div class="Newsletter mx-full">
          <h2 class="text-2xl font-bold mb-3">Newsletter</h2>
          <form class="flex flex-col justify-around h-50  " action="">
             <input type="text" class="w-full h-15 bg-stone-100 p-3 outline-none" placeholder="your name">
