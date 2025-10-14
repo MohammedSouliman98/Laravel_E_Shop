@@ -26,7 +26,7 @@ class categoryFactory extends Factory
      $categories = ['Men', 'Women', 'Kids', 'Unisex'];
 
         return [
-           'name' => Arr::random($categories),
+           'name' => $this->faker->unique()->randomElement($categories),
            'slug' => $this->faker->unique()->slug(),
             'description' => $this->faker->sentence(),
         ];

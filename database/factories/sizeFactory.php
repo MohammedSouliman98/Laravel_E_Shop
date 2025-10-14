@@ -17,10 +17,9 @@ class sizeFactory extends Factory
      */
     public function definition(): array
     {
-        $sizes = ['S','M','L','XL','XS'];
 
         return [
-            'name' => Arr::random($sizes),
+            'name' => $this->faker->unique()->randomElement(['S','M','L','XL','XS']),
         ];
     }
 }

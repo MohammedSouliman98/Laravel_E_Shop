@@ -31,13 +31,13 @@ shopping cart
                <td class="px-6 py-3 text-center border border-black/20">{{$product->price}}$</td>
                <td class="px-6 py-3 text-center border border-black/20 ">
                   <div class="flex justify-center">
-                     <button class="text-2xl bg-amber-200 size-7 text-center content-center " id="minus">
+                     <button class="text-2xl bg-amber-200 size-7 text-center content-center " id="minusbtn">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
                          </svg>                      
                      </button>
                      <div class="number w-10 bg-gray-200 h-7  font-bold text-center content-center" id="number">{{$product->quantity}}</div>
-                     <button class="text-2xl bg-amber-200 size-7 text-center content-center" id="plus">
+                     <button class="text-2xl bg-amber-200 size-7 text-center content-center" id="plusbtn">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                          </svg>                      

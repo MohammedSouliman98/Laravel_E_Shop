@@ -10,7 +10,6 @@
 OUR SHOP
 <div class="font-normal text-xl my-5"><a href="">home</a> - <a href="">shop</a></div>
 </div>
-
 <div class="lg:flex block mt-10">
    <div class="lg:w-1/4 w-full">
       <form action="{{route('filter')}}" class="filters px-5">

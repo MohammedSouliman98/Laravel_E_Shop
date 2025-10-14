@@ -27,7 +27,7 @@ class mainPageController extends Controller
     }
     public function detail(Request $request){
         $product = product::with('category')->find($request->id, ['name', 'description', 'images' ,'price']);
-        $productz = Product::find($request->id)->options->pluck('color_id');
+        $productz = Product::find($request->id)->options()->pluck('color_id');
         $product_color = color::whereIn("id" , $productz)->get()->pluck('name');
         $product_size = size::whereIn("id" , $productz)->get()->pluck('name');
         //  dd($product_color);
@@ -62,9 +62,9 @@ class mainPageController extends Controller
             }
             $product = $product->select('name' , 'price','images','id')->paginate(15);
             $category = category::select('name',"id")->get();
-            dd($product->where('category_id', function(){
-                category::select('id')->where('id' , request('category'));
-            })->count() );
+            // dd($product->where('category_id', function(){
+            //     category::select('id')->where('id' , request('category'));
+            // })->count() );
 
             return view('users.layout.shop',['products' => $product , 'categories' => $category->unique('name') ]);
         }

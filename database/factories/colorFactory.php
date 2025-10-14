@@ -20,9 +20,9 @@ class colorFactory extends Factory
      public $index = 0;
     public function definition(): array
     {
-        $colors = ['red', 'green' , 'blue' , 'black', 'orange'];
+       
         return [
-            'name' => Arr::random($colors),
+            'name' => $this->faker->unique()->randomElement(['red', 'green' , 'blue' , 'black', 'orange']),
         ];        
 
         }

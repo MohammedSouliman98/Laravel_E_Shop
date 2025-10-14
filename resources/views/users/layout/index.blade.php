@@ -10,6 +10,7 @@
                         class="size-15 border border-amber-500/20 text-5xl font-bold text-amber-800/50 content-cneter">E</span>
                     <div class=" ml-2 text-4xl font-bold">Shopper</div>
                 </div>
+                
                 <div id="toggle" class="toggle flex justify-center items-center cursor-pointer  md:hidden text-black">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="size-8">
@@ -35,7 +36,7 @@
                      <ul class=" w-full grid grid-cols-1 font-bold ">
                         <a href={{ route('home') }} class="hover:text-amber-800/50 ">{{ trans('index.home') }}</a>
                         <a href={{ route('shop') }} class="hover:text-amber-800/50 ">{{ trans('index.shop') }}</a>
-                        <a href={{ route('detail', 1) }}
+                        <a href={{ route('detail', $firstproduct->id) }}
                             class="hover:text-amber-800/50 ">{{ trans('index.shop detial') }}</a>
                         <a href={{ route('shopping-cart') }}
                             class="hover:text-amber-800/50 ">{{ trans('index.shopping cart') }}</a>
@@ -206,7 +207,7 @@
                 <ul class="flex justify-between items-center w-2/3 h-15 font-bold ">
                     <a href={{ route('home') }} class="hover:text-amber-800/50 ">{{ trans('index.home') }}</a>
                     <a href={{ route('shop') }} class="hover:text-amber-800/50 ">{{ trans('index.shop') }}</a>
-                    <a href={{ route('detail', 1) }}
+                    <a href={{ route('detail', $firstproduct->id) }}
                         class="hover:text-amber-800/50 ">{{ trans('index.shop detial') }}</a>
                     <a href={{ route('shopping-cart') }}
                         class="hover:text-amber-800/50 ">{{ trans('index.shopping cart') }}</a>

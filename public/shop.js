@@ -10,7 +10,38 @@ var image = ["carousel-1" , "carousel-2"] ;
 var i = 0;
 var toggle = document.getElementById('toggle');
 var toggleContent = document.getElementById('toggle-content');
+const plusbtn = document.querySelector('#plusbtn');
+const minusbtn = document.querySelector('#minusbtn');
+const number = document.querySelector('#number');
+const detailsbtn = document.querySelectorAll('.detailsbtn');
+const infosection = document.querySelector('.info').children;
 
+detailsbtn.forEach(btn => {
+   btn.addEventListener('click' , (e)=>{
+      e.preventDefault();
+      Array.from(infosection).map((info)=>{
+         if(info.classList.contains(btn.innerHTML)){
+            info.classList.toggle('hidden');
+         }else{
+            info.classList.add('hidden');
+         }
+
+      })
+   })
+})
+
+
+plusbtn.addEventListener('click', (e)=>{
+   e.preventDefault();
+   console.log(number.innerHTML)
+   number.innerHTML = parseInt(number.innerHTML) + 1 ;
+})
+
+minusbtn.addEventListener('click', (e)=>{
+   e.preventDefault();
+   console.log(number.innerHTML)
+   number.innerHTML = parseInt(number.innerHTML) - 1 ;
+})
 
 
 toggle.addEventListener('click', ()=>{

@@ -19,7 +19,6 @@ class productFactory extends Factory
     public function definition(): array
     {
 
-        $categories = ['Men', 'Women', 'Kids', 'Unisex'];
         $clothingTypes = ['T-Shirt', 'Jeans', 'Dress', 'Jacket', 'Hoodie', 'Shorts'];
 
         
@@ -28,7 +27,7 @@ class productFactory extends Factory
             'description' => $this->faker->paragraph(3),
             'price' => $this->faker->randomFloat(2, 10, 200),
             'images' => 'img/product-'  . random_int(1,8) .   '.jpg',
-            'category_id' => 1,
+            'category_id' => category::inRandomOrder()->first()->id,
             'stock' => $this->faker->numberBetween(0, 100),
         ];
     }
