@@ -8,11 +8,16 @@ var filter = document.getElementById('filters');
 var filterbtn = document.getElementById('filter-btn');
 var image = ["carousel-1" , "carousel-2"] ;
 var i = 0;
+var toggle = document.getElementById('toggle');
+var toggleContent = document.getElementById('toggle-content');
 
 
 
+toggle.addEventListener('click', ()=>{
+   toggleContent.classList.toggle('hidden');
+   toggleContent.classList.toggle('active');
 
-
+})
 
 btn.forEach(btn =>{
    btn.addEventListener('click', (e)=>{
@@ -24,16 +29,15 @@ btn.forEach(btn =>{
          i--;
          slid()
       }
-    return  slider.style.backgroundImage = "url(img/" + image[i] +".jpg)";
+    return  slider.style.backgroundImage = "url(http://127.0.0.1:8000/img/" + image[i] +".jpg)";
    })
 })
-
 
 
 setInterval(() => {
    i++;
    slid();
-slider.style.backgroundImage = "url(img/" + image[i] +".jpg)";
+slider.style.backgroundImage = "url(http://127.0.0.1:8000/img/" + image[i] +".jpg)";
 }, 2000);
 
 
@@ -55,9 +59,9 @@ cartbtn.addEventListener('click' ,()=>{
    getcart(cartdetail)
 })
 
-filterbtn.addEventListener('click' ,()=>{
-   getcart(filter)
-})
+// filterbtn.addEventListener('click' ,()=>{
+//    getcart(filter)
+// })
 
 dropbtn.addEventListener('click' ,()=>{
    getcart(dropmenu)

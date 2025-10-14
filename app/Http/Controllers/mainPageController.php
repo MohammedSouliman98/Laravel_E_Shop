@@ -22,9 +22,8 @@ class mainPageController extends Controller
     }
     public function shop(){
         $product = product::select('name' , 'price','images','id')->paginate(15);
-        $size = Size::all()->unique('name');
         $category = category::select('name',"id")->get();
-        return view('users.layout.shop',['products' => $product , 'categories' => $category->unique('name') , 'size_options' => $size]);
+        return view('users.layout.shop',['products' => $product , 'categories' => $category->unique('name') ]);
     }
     public function detail(Request $request){
         $product = product::with('category')->find($request->id, ['name', 'description', 'images' ,'price']);
@@ -61,12 +60,13 @@ class mainPageController extends Controller
             if($request->has('category')){
                 $product->with('category')->where('category_id',request('category'));
             }
-            if($request->has('size')){  
-               $size =  Size::where('name', request('size'))->get();
-            }
-            $product->select('name' , 'price','images','id')->get();
+            $product = $product->select('name' , 'price','images','id')->paginate(15);
             $category = category::select('name',"id")->get();
-            return view('users.layout.shop',['products' => $product , 'categories' => $category->unique('name') , 'size_options' => $size ]);
+            dd($product->where('category_id', function(){
+                category::select('id')->where('id' , request('category'));
+            })->count() );
+
+            return view('users.layout.shop',['products' => $product , 'categories' => $category->unique('name') ]);
         }
     public function search(Request $request){
         $product = product::select('name' , 'price','images','id','size_options')->where('name', 'like' , "%{$request->search}%")
@@ -77,9 +77,9 @@ class mainPageController extends Controller
   
     }
 
-    public function test(){
-        // $test = product::with(['options.colors', 'options.sizes'])->find(1);
-        // $color = Color::where('id' , $test)->get();
-        // return $test;
-    }
+    // public function test(){
+    //     // $test = product::with(['options.colors', 'options.sizes'])->find(1);
+    //     // $color = Color::where('id' , $test)->get();
+    //     // return $test;
+    // }
 }

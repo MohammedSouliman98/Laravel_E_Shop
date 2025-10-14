@@ -55,17 +55,7 @@ OUR SHOP
                   </div>
                   @endforeach
                </div>
-               <div class="filter-size lg:border-b py-5 h-80 flex flex-col justify-between">
-                  <h2 class="font-bold capitalize text-xl ">filter by size</h2>
-                  
-                  @foreach ($size_options as $size)
-                     <div class="flex justify-between">
-                        <input type="radio" value="{{$size->name}}" name="size" id="{{$size->name}}">
-                        <label for="{{$size->name}}" class="uppercase">{{$size->name}}</label>
-                        <div class="number-of-product px-2 inline border border-black/20 ">100</div>
-                     </div>
-                  @endforeach
-               </div>
+               
             </div>
          </div>
       </form>

@@ -1,16 +1,24 @@
-*{
-   text-transform: capitalize;
+* {
+    text-transform: capitalize;
 }
 
-.product-img img{
-   transition: 0.5s;
+.product-img img {
+    transition: 0.5s;
 }
 
-.product-img:hover img{
-   transform: scale(1.25);
+.product-img:hover img {
+    transform: scale(1.25);
+}
+#toggle-content{
+    height: 0;
+    transition: all 0.3s ease-in-out;
+}
+#toggle-content.active{
+    height: auto;
 }
 
+/* 
 .slider {
    background-image: url("img/carousel-2.jpg");
    background-size: cover;
-}
+} */

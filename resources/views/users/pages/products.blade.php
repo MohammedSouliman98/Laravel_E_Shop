@@ -3,7 +3,7 @@
 
    <div class="product-img border border-black/10">
       <div class="border-b border-black/10 overflow-hidden">
-         <img src={{ asset($product->images) }} class="mx-auto" alt="">
+        <img src={{ asset($product->images) }} class="mx-auto" alt="">
       </div>
       <div class="body font-bold my-10">
          <div class="title text-center">{{$product->name}}</div>
@@ -24,5 +24,5 @@
           </svg>
             {{trans('product.Add To Cart')}}</a>
       </div>
-   </div>
+   </div> 
    @endforeach

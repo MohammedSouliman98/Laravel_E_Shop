@@ -14,7 +14,7 @@
    <div class="flex max-md:flex-col  mb-10 md:h-125">
       <div class="border-b border-black/10 overflow-hidden  w-full h-125 md:w-2/5 bg-[url({{ asset($product->images) }})] bg-no-repeat bg-cover bg-center" >
       </div>
-      <div class=" flex flex-col justify-around md:w-3/5  px-15 ">
+      <div class=" flex flex-col justify-around md:w-3/5  px-5 ">
          <h2 class="capitalize font-bold text-3xl">{{$product->name}}</h2>
          <div class="rate">5 star</div>
          <div class="price font-bold">{{$product->price}}$</div>
