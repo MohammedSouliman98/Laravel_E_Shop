@@ -15,7 +15,7 @@
    <input type="number" name="price" placeholder="price"  class="px-6 py-3 text-xl font-bold text-gray-600 border border-black/10 mb-5" value="{{$product->price}}" >
    <input type="text" name="size_options" placeholder="size"  class="px-6 py-3 text-xl font-bold text-gray-600 border border-black/10 mb-5" value="{{$product->size_options}}" >
    <input type="file" name="images" placeholder="image"  class="px-6 py-3 text-xl font-bold text-gray-600 border border-black/10 mb-5" value="{{$product->images}}" >
-   <input type="text" name="category" id="category" placeholder="category" class="w-full px-6 py-3 text-xl font-bold text-gray-600 border border-black/10 mb-5" value="{{$product->category}}" >
+   <input type="text" name="category" id="category" placeholder="category" class="w-full px-6 py-3 text-xl font-bold text-gray-600 border border-black/10 mb-5" value="{{$product->category->name}}" >
    <input type="number" name="rate" placeholder="rate"  class="px-6 py-3 text-xl font-bold text-gray-600 border border-black/10 mb-5" value="{{$product->rate}}" >
    <input type="number" name="stock" placeholder="stock"  class="px-6 py-3 text-xl font-bold text-gray-600 border border-black/10 mb-5" value="{{$product->stock}}" >
    <label for="is_trend">trend</label>

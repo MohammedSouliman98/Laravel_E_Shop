@@ -37,10 +37,10 @@ public function options(){
     return $this->hasMany(Product_option::class);
 }
 public function colors(){
-    return $this->belongsToMany(Color::class);
+    return $this->belongsToMany(Color::class, 'product_options', 'product_id', 'color_id');
 }
 public function sizes(){
-    return $this->belongsToMany(Size::class);
+    return $this->belongsToMany(Size::class, 'product_options', 'product_id', 'size_id');
 }
 }
 

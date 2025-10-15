@@ -8,7 +8,7 @@
 @section('content')
 
 
-   <div class="main_dashboard w-6/8 mx-2 overflow-x-auto">
+   <div class="main_dashboard w-full h-screen m-2 overflow-x-auto">
       <a href="{{route('product.create')}}" class="text-white bg-blue-500 px-6 px-3 rounded mb-3">{{trans('button.create')}}</a>
       <table class="table w-full border border-black/20 ">
          <thead class="  bg-gray-200 ">
@@ -19,6 +19,7 @@
             <th class="px-6 py-3">{{trans('product.image')}}</th>
             <th class="px-6 py-3">{{trans('product.categry')}}</th>
             <th class="px-6 py-3">{{trans('product.size')}}</th>
+            <th class="px-6 py-3">{{trans('product.color')}}</th>
             <th class="px-6 py-3">{{trans('rate')}}</th>
             <th class="px-6 py-3">{{trans('product.stock')}}</th>
             <th class="px-6 py-3">{{trans('product.trend')}}</th>
@@ -31,9 +32,14 @@
                <td class="px-3 py-1 text-center border border-black/20">{{$product->name}}</td>
                <td class="px-3 py-1 text-center border border-black/20">{{$product->description}}</td>
                <td class="px-3 py-1 text-center border border-black/20">{{$product->price}}</td>
-               <td class="px-3 py-1 text-center border border-black/20">{{$product->image}}</td>
-               <td class="px-3 py-1 text-center border border-black/20">{{$product->category}}</td>
-               <td class="px-3 py-1 text-center border border-black/20">{{$product->size_options}}</td>
+               <td class="px-3 py-1 text-center border border-black/20"><img src="{{asset($product->images)}}" alt=""></td>
+               <td class="px-3 py-1 text-center border border-black/20">{{$product->category->name}}</td>
+               <td class="px-3 py-1 text-center border border-black/20">@foreach ($product->sizes as $size)
+                  {{$size->name}}
+               @endforeach</td>
+               <td class="px-3 py-1 text-center border border-black/20">@foreach ($product->colors as $color)
+                  {{$color->name}}
+               @endforeach</td>
                <td class="px-3 py-1 text-center border border-black/20">{{$product->rate}}</td>
                <td class="px-3 py-1 text-center border border-black/20">{{$product->stock}}</td>
                <td class="px-3 py-1 text-center border border-black/20">{{$product->is_trend}}</td>

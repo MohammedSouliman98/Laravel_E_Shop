@@ -100,7 +100,7 @@
                 class="w-40 px-6 py-3 detailsbtn text-amber-400 font-bold text-center border border-white focus:border-gray-500 focus:border-b-white focus:text-gray-500 ">reviews</button>
         </div>
         <div class="info my-10 ">
-            <div class="description hidden">
+            <div class="child description hidden">
                 <h2 class="font-bold text-xl my-5">product description</h2>
                 <p class="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium consequatur
                     accusamus, veniam, quisquam facere suscipit architecto voluptas tenetur sit nostrum dolorem perferendis
@@ -116,7 +116,7 @@
                     suscipit ab aut architecto unde.
                 </p>
             </div>
-            <div class="information hidden">
+            <div class="child information hidden">
                 <h2 class="font-bold text-xl my-5">Additional Information</h2>
                 <p class="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium consequatur
                     accusamus, veniam, quisquam facere suscipit architecto voluptas tenetur sit nostrum dolorem perferendis
@@ -132,7 +132,7 @@
                     suscipit ab aut architecto unde.
                 </p>
             </div>
-            <div class="reviews flex max-md:flex-col gap-5 w-full">
+            <div class="child reviews flex max-md:flex-col gap-5 w-full">
                 <div class="md:w-1/2 w-full max-md:border-b max-md:py-5">
                     <h2 class="font-bold text-2xl">1 reviews for "colorful stylish shirt"</h2>
                     <div class="flex flex-col">

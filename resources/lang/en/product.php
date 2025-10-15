@@ -11,6 +11,7 @@ return [
    'image' => 'image',
    'categry' => 'categry',
    'size' => 'size',
+   'color' => 'color',
    'rate' => 'rate',
    'stock' => 'stock',
    'trend' => 'trend',

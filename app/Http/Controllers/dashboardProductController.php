@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\product;
+use App\Models\Product_option;
+use App\Models\Size;
 use Illuminate\Http\Request;
 
 class dashboardProductController extends Controller
@@ -12,8 +14,8 @@ class dashboardProductController extends Controller
      */
     public function index()
     {
-        $data["product"] = product::all();
-        return view('admin.product' , ['products' => $data['product']]);
+        $products =  $products = Product::with(['sizes', 'colors'])->get(); // Eager load sizes and colors
+        return view('admin.product' , ['products' =>  $products]);
     }
 
     /**

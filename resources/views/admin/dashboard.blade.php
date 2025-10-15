@@ -8,7 +8,7 @@
 @section('content')
 
 
-   <div class="main_dashboard w-6/8 mx-2"> 
+   <div class="main_dashboard w-full m-2"> 
 <div  class="bg-blue-500 rounded text-white px-3 py-2 mb-3 w-30 text-center">
    <a href="{{route('user.create')}}">{{trans('button.add_user')}}</a>
 </div>

@@ -14,7 +14,8 @@
    <input type="number" name="price" placeholder="price"  class="px-6 py-3 text-xl font-bold text-gray-600 border border-black/10 mb-5" {{$product->route === 'show' ?  "value=$product->price readonly" : ''}}>
    <input type="number" name="size_options" placeholder="size"  class="px-6 py-3 text-xl font-bold text-gray-600 border border-black/10 mb-5" {{$product->route === 'show' ?  "value=$product->size_options readonly" : ''}}>
    <input type="file" name="images" placeholder="image"  class="px-6 py-3 text-xl font-bold text-gray-600 border border-black/10 mb-5" {{$product->route === 'show' ?  "value=$product->images readonly" : ''}}>
-   <input type="text" name="category" id="category" placeholder="category" class="w-full px-6 py-3 text-xl font-bold text-gray-600 border border-black/10 mb-5" {{$product->route === 'show' ?  "value=$product->category readonly" : ''}}>
+  
+   <input type="text" name="category" id="category" placeholder="category" class="w-full px-6 py-3 text-xl font-bold text-gray-600 border border-black/10 mb-5" {{$product->route === "show" ?  "value=$product->category->name  readonly " : ""}}>
    <input type="number" name="rate" placeholder="rate"  class="px-6 py-3 text-xl font-bold text-gray-600 border border-black/10 mb-5"  {{$product->route === 'show' ?  "value=$product->rate readonly" : ''}}>
    <input type="number" name="stock" placeholder="stock"  class="px-6 py-3 text-xl font-bold text-gray-600 border border-black/10 mb-5" {{$product->route === 'show' ?  "value=$product->stock readonly" : ''}}>
    <label for="is_trend">trend</label>

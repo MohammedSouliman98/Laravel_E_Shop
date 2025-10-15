@@ -213,11 +213,11 @@
                         class="hover:text-amber-800/50 ">{{ trans('index.shopping cart') }}</a>
                     <a href={{ route('contact') }} class="hover:text-amber-800/50 ">{{ trans('index.contact') }}</a>
                 </ul>
-                <div class="auth w-1/3 flex justify-end items-center pr-10">
+                <div class="auth w-1/3 flex justify-end items-center text-center pr-10">
                     @if (Auth::user())
                         <ul class="gird grid-cols-1 gap-3">
-                            <li class="font-bold text-lg hover:text-amber-800/50" >
-                                {{ Auth::user()->name }}
+                            <li class="font-bold text-2xl " >
+                                Hi <span class="text-amber-800/50">{{ Auth::user()->name }}</span> 
                             </li>
                             @if (Auth::user()->is_admin == 1)
                                 <li class="font-bold text-lg hover:text-amber-800/50">
