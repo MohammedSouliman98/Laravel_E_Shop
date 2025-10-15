@@ -62,6 +62,13 @@
 git clone https://github.com/MohammedSouliman98/Laravel_E_Shop.git
 cd Laravel_E_Shop
 
+Create Database e_shop
+
+
+npm install
+npm run build
+
+
 composer install
 cp .env.example .env
 php artisan key:generate
@@ -74,5 +81,10 @@ php artisan serve --host=127.0.0.1 --port=8000
 لاعادة توليد بيانات في قواعد البيانات
 php artisan migrate:fresh --seed
 
+
+information for login with admin
+
+Email : mohammed@mohammed.com
+password : 12121212
 
 
