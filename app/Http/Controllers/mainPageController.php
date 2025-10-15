@@ -69,7 +69,7 @@ class mainPageController extends Controller
             return view('users.layout.shop',['products' => $product , 'categories' => $category->unique('name') ]);
         }
     public function search(Request $request){
-        $product = product::select('name' , 'price','images','id','size_options')->where('name', 'like' , "%{$request->search}%")
+        $product = product::select('name' , 'price','images','id')->where('name', 'like' , "%{$request->search}%")
                     ->orwhere('description', 'like' , "%{$request->search}%")
                     ->paginate(5);
         $category = category::select('name',"id" ,'description')->get();

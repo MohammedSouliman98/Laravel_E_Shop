@@ -12,10 +12,10 @@ OUR SHOP
 </div>
 <div class="lg:flex block mt-10">
    <div class="lg:w-1/4 w-full">
-      <form action="{{route('filter')}}" class="filters px-5">
+      <form action="{{route('filter')}}" class=" px-5">
          <a id="filter-btn" class="py-3 text-center font-bold rounded-lg mt-5 text-black cursor-pointer">Show filtter</a>
          <div id="filters" class="max-lg:border-b">
-            <button id="filter-btn" class="bg-blue-500 px-6 py-3 text-center font-bold rounded-lg mt-5 text-white cursor-pointer">filter</button>
+            <button   class="bg-blue-500 px-6 py-3 text-center font-bold rounded-lg mt-5 text-white cursor-pointer">filter</button>
             <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-1 lg:gap-0 gap-5 ">
                <div class="filter-price lg:border-b py-5 h-80 flex flex-col justify-between">
                   <h2 class="font-bold capitalize text-xl ">filter by price</h2>
